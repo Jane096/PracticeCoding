@@ -9,12 +9,12 @@ import java.util.Set;
 
 public class lottoPractice {
 		public static void main(String[] args) {
-			System.out.println("번호추출할 횟수 입력");
+			System.out.println("몇번돌릴까요");
 			
 			Scanner sc = new Scanner(System.in);
-			int play_count=sc.nextInt();
+			int count = sc.nextInt();
 			
-			for(int i=1; i <= play_count; i++) { //0번째 부터 시작하는 것은 없다 1로 넣어야지
+			for(int i=1; i <= count; i++) { //0번째 부터 시작하는 것은 없다 1로 넣어야지
 				System.out.println(i + "번째:" + making_lottonumber());
 			}
 		}
