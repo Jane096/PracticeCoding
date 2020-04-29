@@ -11,17 +11,17 @@ class Result {
         List<Integer> answer = new ArrayList<Integer>();
 
         for(int i=0; i<grades.size(); i++) {
-            
             if(grades.get(i) < 38){
                 answer.add(grades.get(i));
+            }else if(grades.get(i)%10 == 0){
+                answer.add(grades.get(i));
             }else if(grades.get(i) % 5 >= 3) {
-                answer.add(grades.get(i)+(5-grades.get(i)%5));
+                answer.add(grades.get(i)+(5-(grades.get(i)%5)));
             }else{
                 answer.add(grades.get(i));
             }
         }
-        Collections.sort(answer);
-        Collections.reverse(answer);
+        
         return answer;
     }
 }
