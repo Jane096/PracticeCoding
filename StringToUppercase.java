@@ -1,23 +1,24 @@
 class Solution {
     public String solution(String s) {
         String answer = "";
-        String[] arr = s.split("");//굳이 toCharArray 사용할 필요는 없을 듯(코드가 복잡해짐)
+        Char ch = 0; //글자를 담을 변수
         int count = 0; //짝,홀을 구분할 변수 
         
-        for(int i=0; i<arr.length; i++) {
-            if(s.equals("")) {
-                count=0;
-                continue;//공백이 있기때문에 공백처리 조건문
-            }
-            if(count % 2 ==0) {
-                arr[i] = arr[i].toUpperCase();
-                count++;
+        for(int i=0; i<s.length(); i++) {
+            if(s.charAt(i) == ' ') { //공백이 있기때문에 공백처리 조건문
+                ch = s.charAt(i);
+                count=0;   
                 
             }else {
-                arr[i] = arr[i].toLowerCase();
-                count++;
+                if(count % 2 == 0) {
+                    ch = Character.toUpperCase(s.charAt(i));
+                    count++;
+                }else {
+                    ch = Character.toUpperCase(s.charAt(i));
+                    count++;
+                }
             }
-            answer += arr[i];
+            answer += ch;
         }
         
         return answer;
